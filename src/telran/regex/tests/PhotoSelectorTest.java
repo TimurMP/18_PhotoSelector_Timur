@@ -25,9 +25,6 @@ class PhotoSelectorTest {
     };
 
 
-
-
-
     @Test
     void testAllEuropePictures() {
         String regex = "^(Paris|London)";
@@ -49,6 +46,7 @@ class PhotoSelectorTest {
         assertArrayEquals(expected, actual);
 
     }
+
     @Test
     void testAllAutumnPictures() {
         String regex = "\\d{4}(09|10|11)\\d{2}";
@@ -83,6 +81,21 @@ class PhotoSelectorTest {
 
     }
 
+    @Test
+    void testAllNightPictures() {
+        String regex = "1[8-9]|2[1-4]\\d{4}";
+        String[] actual = PhotoSelector.selectPictures(pictures, regex);
+        String[] expected = {
+                "Paris\\20150301_211035.jpg",
+                "Paris\\20150401_181705.jpg",
+                "Paris\\20150501_231035.gif",
+                "London\\20140601_211035.gif",
+                "London\\20151001_231035.jpg",
+                "Chicago\\20151111_232000.png"
+        };
+        assertArrayEquals(expected, actual);
+
+    }
 
 
 }
