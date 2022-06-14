@@ -64,5 +64,25 @@ class PhotoSelectorTest {
     }
 
 
+    @Test
+    void testAll2015Pictures() {
+        String regex = "2015\\d{4}";
+        String[] actual = PhotoSelector.selectPictures(pictures, regex);
+        String[] expected = {
+                "Paris\\20150301_211035.jpg",
+                "Paris\\20150401_110023.gif",
+                "Paris\\20150401_181705.jpg",
+                "Paris\\20150501_231035.gif",
+                "London\\20151001_110023.jpg",
+                "London\\20151001_121705.jpg",
+                "London\\20151001_231035.jpg",
+                "Chicago\\20150301_120001.png",
+                "Chicago\\20151111_232000.png"
+        };
+        assertArrayEquals(expected, actual);
+
+    }
+
+
 
 }
