@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 public class PhotoSelector {
     public static String[] selectPictures(String[] pictures, String regex) {
 //        Chicago\20151111_232000.png,
-//        regex = "(png|jpg)$";
+//        regex = "1[8-9]|2[1-4]\\d{4}";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher;
         StringBuilder builder = new StringBuilder();

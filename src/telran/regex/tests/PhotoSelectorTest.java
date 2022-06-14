@@ -99,7 +99,7 @@ class PhotoSelectorTest {
 
     @Test
     void testAllChicagoPictures() {
-        String regex = "1[8-9]|2[1-4]\\d{4}";
+        String regex = "^Chicago";
         String[] actual = PhotoSelector.selectPictures(pictures, regex);
         String[] expected = {
                 "Chicago\\20150301_120001.png",
@@ -129,6 +129,5 @@ class PhotoSelectorTest {
         assertArrayEquals(expected, actual);
 
     }
-
 
 }
