@@ -97,5 +97,38 @@ class PhotoSelectorTest {
 
     }
 
+    @Test
+    void testAllChicagoPictures() {
+        String regex = "1[8-9]|2[1-4]\\d{4}";
+        String[] actual = PhotoSelector.selectPictures(pictures, regex);
+        String[] expected = {
+                "Chicago\\20150301_120001.png",
+                "Chicago\\20151111_232000.png"
+        };
+        assertArrayEquals(expected, actual);
+
+    }
+
+    @Test
+    void testAllJpgPngPictures() {
+        String regex = "(png|jpg)$";
+        String[] actual = PhotoSelector.selectPictures(pictures, regex);
+        String[] expected = {
+                "Paris\\20140101_090000.jpg",
+                "Paris\\20140201_121005.jpg",
+                "Paris\\20150301_211035.jpg",
+                "Paris\\20150401_181705.jpg",
+                "London\\20140205_090000.jpg",
+                "London\\20140205_121005.jpg",
+                "London\\20151001_110023.jpg",
+                "London\\20151001_121705.jpg",
+                "London\\20151001_231035.jpg",
+                "Chicago\\20150301_120001.png",
+                "Chicago\\20151111_232000.png"
+        };
+        assertArrayEquals(expected, actual);
+
+    }
+
 
 }
